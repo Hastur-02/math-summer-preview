@@ -13,6 +13,8 @@
 ```
 家教/
 ├── AGENTS.md                      # 本文件,协作入口
+├── .gitignore                     # Git 忽略规则
+├── index.html                     # 项目门户首页(GitHub Pages 入口)
 ├── .trae/
 │   └── documents/
 │       └── 高一数学暑假预习项目实施计划.md   # 实施计划(只读参考)

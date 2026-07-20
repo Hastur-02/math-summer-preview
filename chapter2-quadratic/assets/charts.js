@@ -180,11 +180,10 @@
   // ===== Mermaid 初始化 =====
   if (window.mermaid) {
     mermaid.initialize({
-      startOnLoad: false,
+      startOnLoad: true,
       theme: 'neutral',
       securityLevel: 'loose',
       fontFamily: '"PingFang SC", "Hiragino Sans GB", sans-serif'
     });
-    mermaid.run();
   }
 })();
