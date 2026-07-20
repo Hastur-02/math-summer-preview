@@ -118,3 +118,5 @@ HTML 中引用教材目录、官方平台信息时,用 `<sup><a href="#cite-N">[
 
 - 2026-07-20:项目初始化,创建 AGENTS.md、教学大纲报告、第一天提纲挈领课报告。
 - 2026-07-20:新增第二章讲义(chapter2-quadratic),覆盖 Day 5–7 内容,含数学公式 CSS 呈现系统、ECharts 抛物线图象与 Mermaid 知识网络图。
+- 2026-07-21:项目部署至 GitHub Pages。仓库 github.com/Hastur-02/math-summer-preview,公网地址 hastur-02.github.io/math-summer-preview/。新增门户首页 index.html 串联所有报告。
+- 2026-07-21:修复 Mermaid 图表渲染问题,将 startOnLoad:false + mermaid.run() 改为 startOnLoad:true 自动渲染。
