@@ -120,3 +120,4 @@ HTML 中引用教材目录、官方平台信息时,用 `<sup><a href="#cite-N">[
 - 2026-07-20:新增第二章讲义(chapter2-quadratic),覆盖 Day 5–7 内容,含数学公式 CSS 呈现系统、ECharts 抛物线图象与 Mermaid 知识网络图。
 - 2026-07-21:项目部署至 GitHub Pages。仓库 github.com/Hastur-02/math-summer-preview,公网地址 hastur-02.github.io/math-summer-preview/。新增门户首页 index.html 串联所有报告。
 - 2026-07-21:修复 Mermaid 图表渲染问题,将 startOnLoad:false + mermaid.run() 改为 startOnLoad:true 自动渲染。
+- 2026-07-21:修复 GitHub Pages 上 `_shared/js/` 下 JS 库返回 404 的问题。根因是 GitHub Pages 默认使用 Jekyll,会忽略以下划线开头的目录(`_shared`)。添加 `.nojekyll` 文件禁用 Jekyll 处理。同时简化 math-syllabus 中 Mermaid 流程图语法,移除 `<i>` 标签。
