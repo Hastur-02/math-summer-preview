@@ -14,6 +14,7 @@
 家教/
 ├── AGENTS.md                      # 本文件,协作入口
 ├── .gitignore                     # Git 忽略规则
+├── .nojekyll                      # 禁用 GitHub Pages 的 Jekyll 处理
 ├── index.html                     # 项目门户首页(GitHub Pages 入口)
 ├── .trae/
 │   └── documents/
@@ -31,13 +32,20 @@
 │   └── _shared/
 │       ├── js/                    # mermaid.min.js
 │       └── fonts/
-└── chapter2-quadratic/            # 第二章讲义 HTML 报告(Day 5–7)
-    ├── chapter2-quadratic.html    # 报告主体(含数学公式 CSS 系统)
+├── chapter2-quadratic/            # 第二章讲义 HTML 报告(Day 5–7)
+│   ├── chapter2-quadratic.html    # 报告主体(含数学公式 CSS 系统)
+│   ├── assets/
+│   │   └── charts.js              # ECharts 抛物线图象 + Mermaid 关系图
+│   └── _shared/
+│       ├── js/                    # echarts.min.js、mermaid.min.js
+│       └── fonts/
+└── function-plotter/              # 函数图像教学工具(交互式)
+    ├── function-plotter.html      # 工具主体(含参数控制面板与图表区)
     ├── assets/
-    │   └── charts.js              # ECharts 抛物线图象 + Mermaid 关系图
+    │   └── plotter.js             # 8 类函数逻辑 + 参数绑定 + 图表更新
     └── _shared/
-        ├── js/                    # echarts.min.js、mermaid.min.js
-        └── fonts/
+        ├── js/                    # echarts.min.js
+        └── fonts/                 # Outfit 字体
 ```
 
 每个 HTML 报告目录由 `new-report.sh` 脚手架生成,自包含、零外部依赖。`assets/` 存放报告本地资源,`_shared/` 存放跨报告可复用的 JS 库与字体。
@@ -121,3 +129,4 @@ HTML 中引用教材目录、官方平台信息时,用 `<sup><a href="#cite-N">[
 - 2026-07-21:项目部署至 GitHub Pages。仓库 github.com/Hastur-02/math-summer-preview,公网地址 hastur-02.github.io/math-summer-preview/。新增门户首页 index.html 串联所有报告。
 - 2026-07-21:修复 Mermaid 图表渲染问题,将 startOnLoad:false + mermaid.run() 改为 startOnLoad:true 自动渲染。
 - 2026-07-21:修复 GitHub Pages 上 `_shared/js/` 下 JS 库返回 404 的问题。根因是 GitHub Pages 默认使用 Jekyll,会忽略以下划线开头的目录(`_shared`)。添加 `.nojekyll` 文件禁用 Jekyll 处理。同时简化 math-syllabus 中 Mermaid 流程图语法,移除 `<i>` 标签。
+- 2026-07-23:新增函数图像教学工具(function-plotter),支持一次/二次/幂/指数/对数/正弦/余弦/正切 8 类函数的参数实时编辑与图像渲染。使用 ECharts SVG 渲染,原生 JS 交互逻辑,沿用 Fresh Gradient 视觉风格。门户首页新增工具入口卡片。
